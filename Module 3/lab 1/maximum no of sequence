@@ -1,0 +1,35 @@
+#include <iostream>
+#include <cstdio>
+#include<bits/stdc++.h>
+using namespace std;
+
+
+int main() {
+    string text,pat;
+    cin>>text>>pat;
+    long long ans1=0,ans2=0;
+    int ans;
+        int m=1;
+        for(int i=0;i<text.size();i++){
+             if(pat[1]==text[i]){
+                long long tp=m*1;
+                ans1+=tp;
+            }
+            if(pat[0]==text[i]){
+                m++;
+            }
+        }
+        int p=1;
+        for(int i=text.size()-1;i>=0;i--){
+             if(pat[0]==text[i]){
+                long long tp=p*1;
+                ans2+=tp;
+            }
+            if(pat[1]==text[i]){
+                p++;
+            }
+        }
+        ans=max(ans1,ans2);
+    cout<<ans;  
+    }
+                                                                                                                            
